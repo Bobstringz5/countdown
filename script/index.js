@@ -22,7 +22,7 @@ setInterval(() => {
   const distance = countdownDate - now;
 
   if (distance < 0) {
-    document.querySelector(".countdown").innerHTML = "🎉 Event Started!";
+    document.querySelector(".countdown").innerHTML = " Event Started!";
     return;
   }
 
