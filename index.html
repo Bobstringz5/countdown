@@ -5,15 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Launch Countdown Timer</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap">
 </head>
 <body>
   <div class="background">
-    <img src="images/bg-stars.svg" alt="stars" class="bg-stars">
-    <img src="images/pattern-hills.svg" alt="hills" class="bg-hills">
+    <img src="./launch-countdown-timer-main/images/bg-stars.svg" alt="stars" class="bg-stars">
+    <img src="./launch-countdown-timer-main/images/pattern-hills.svg" alt="hills" class="bg-hills">
   </div>
 
   <div class="container">
     <h1>WE'RE LAUNCHING SOON</h1>
+    <div class="event-input">
+  <label for="eventDate">Enter Event Date & Time:</label>
+  <input type="datetime-local" id="eventDate" />
+  <button onclick="setEventDate()">Set Countdown</button>
+</div>
+
 
     <div class="countdown">
       <div class="time-box">
@@ -46,13 +53,15 @@
       </div>
     </div>
 
+    
+    <div class="footer">
     <div class="socials">
-      <a href="#"><img src="images/icon-facebook.svg" alt="Facebook"></a>
-      <a href="#"><img src="images/icon-pinterest.svg" alt="Pinterest"></a>
-      <a href="#"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+      <a href="#"><img src="./launch-countdown-timer-main/images/icon-facebook.svg" alt="Facebook"></a>
+      <a href="#"><img src="./launch-countdown-timer-main/images/icon-pinterest.svg" alt="Pinterest"></a>
+      <a href="#"><img src="./launch-countdown-timer-main/images/icon-instagram.svg" alt="Instagram"></a>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="./script/index.js"></script>
 </body>
 </html>

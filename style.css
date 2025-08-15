@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Red Hat Text', sans-serif;
+  background: hsl(235, 16%, 14%);
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+/* .background{
+  background-image: url("./launch-countdown-timer-main/images/bg-stars.svg"), url("./launch-countdown-timer-main/images/pattern-hills.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center top, center bottom; /* stars at top, hills at bottom */
+  /* background-size: cover, cover; stretch to cover full width */
+/* } */ */
+.bg-stars {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+}
+
+.bg-hills {
+  width: 100%;
+  /* position: absolute; */
+  bottom: 0;
+}
+.event-input {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.event-input label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: white;
+}
+
+.event-input input {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  margin-right: 8px;
+}
+
+.event-input button {
+  padding: 8px 12px;
+  border: none;
+  background: hsl(345, 95%, 68%);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
+.container {
+  position: relative;
+  z-index: 10;
+  max-width: 900px;
+  width: 100%;
+  padding: 20px;
+}
+
+h1 {
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+  font-size: 1.5rem;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Time Box */
+.time-box {
+  background: hsl(236, 21%, 26%);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  color: hsl(345, 95%, 68%);
+  box-shadow: 0px 5px hsl(234, 17%, 12%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-box p {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  font-weight: 700;
+  color: hsl(237, 18%, 59%);
+
+}
+
+/* Flip Animation */
+.flip {
+  position: relative;
+  font-size: 2.5rem;
+  color: #ff4c6d;
+  perspective: 1000px;
+}
+
+.flip .top,
+.flip .bottom {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  overflow: hidden;
+  backface-visibility: hidden;
+  background: #2c2e3a;
+  border-radius: 5px;
+}
+
+.flip .top {
+  transform-origin: bottom;
+}
+
+.flip .bottom {
+  transform-origin: top;
+  transform: rotateX(180deg);
+}
+
+.flip.animate .top {
+  animation: flipTop 0.5s forwards;
+}
+
+.flip.animate .bottom {
+  animation: flipBottom 0.5s forwards;
+}
+
+@keyframes flipTop {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(-180deg); }
+}
+
+@keyframes flipBottom {
+  0% { transform: rotateX(180deg); }
+  100% { transform: rotateX(0deg); }
+}
+.footer {
+  position: relative;
+  width: 100%;
+  height: 200px; /* adjust to the height of your hills image */
+  background: url('./images/pattern-hills.svg') no-repeat bottom center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+.footer .socials {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer .socials img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.footer .socials img:hover {
+  transform: scale(1.2);
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .flip {
+    font-size: 2rem;
+  }
+
+  .time-box {
+    min-width: 65px;
+  }
+}
